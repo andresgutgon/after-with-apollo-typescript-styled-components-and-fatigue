@@ -1,21 +1,29 @@
-# Razzle x After.js
+# After.js x Razzle x Apollo Example
 
-## How to use
+# start SWAPI graphql server
 
-Download the example [or clone the whole project](https://github.com/jaredpalmer/razzle.git):
+`git clone git@github.com:graphql/swapi-graphql.git`
+`cd swapi-graphql`
+`yarn install`
 
-```bash
-curl https://codeload.github.com/jaredpalmer/razzle/tar.gz/master | tar -xz --strip=2 razzle-master/examples/with-afterjs
-cd with-afterjs
+patch it with cors, if needed
+`yarn add cors`
+```js
+// ./src/server/main.js
+import express from 'express';
+import graphqlHTTP from 'express-graphql';
+import swapiSchema from '../schema';
+import cors from 'cors';
+const app = express();
+app.use(cors());
+...
 ```
 
-Install it and run:
+`yarn start`
 
-```bash
-yarn install
-yarn start
-```
+this will start a local server on `http://localhost:8080` ; port may change, update it in `createApolloClient.js`
 
-## Idea behind the example
+# start example
 
-This is a basic, bare-bones example of how to use After.js and Razzle.
+`yarn install`
+`yarn start`

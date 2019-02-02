@@ -15,7 +15,7 @@ export default [
     path: '/about/:id',
     exact: true,
     component: asyncComponent({
-      loader: () => import('./About'),
+      loader: () => import('./About.tsx'),
       Placeholder: () => <div>...LOADING...</div>
     }),
   },
